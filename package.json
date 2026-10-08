@@ -1,0 +1,30 @@
+{
+  "name": "kavico-full-project",
+  "version": "4.34.0",
+  "private": true,
+  "description": "KAVICO full project: public site v434 + private admin v434 scoped case SLA pinning, leave entitlements, lease recovery, forecast trends and planning approval",
+  "scripts": {
+    "build:public": "node scripts/build-public-deploy.mjs",
+    "audit:public": "node scripts/audit-public-v434.mjs .",
+    "audit:dist": "node scripts/audit-public-v434.mjs dist-public",
+    "test:admin": "npm --prefix kavico_v434_admin test",
+    "check:admin": "npm --prefix kavico_v434_admin run check",
+    "qa:full": "npm run audit:public && npm run audit:performance && npm run audit:responsive && npm run audit:delivery && npm run audit:boundary && npm run audit:csp && npm run audit:abuse && npm run test:form-guard && npm run test:lead-bridge && npm run build:public && npm run audit:dist && npm run audit:performance:dist && npm run audit:responsive:dist && npm run audit:delivery:dist && npm run audit:boundary:dist && npm run audit:csp:dist && npm run audit:abuse:dist && npm run test:admin && npm run check:admin",
+    "audit:performance": "node scripts/audit-performance-v434.mjs .",
+    "audit:performance:dist": "node scripts/audit-performance-v434.mjs dist-public",
+    "audit:responsive": "node scripts/audit-responsive-v434.mjs .",
+    "audit:responsive:dist": "node scripts/audit-responsive-v434.mjs dist-public",
+    "audit:delivery": "node scripts/audit-delivery-v434.mjs .",
+    "audit:delivery:dist": "node scripts/audit-delivery-v434.mjs dist-public",
+    "audit:boundary": "node scripts/audit-public-boundary-v434.mjs .",
+    "audit:boundary:dist": "node scripts/audit-public-boundary-v434.mjs dist-public",
+    "audit:csp": "node scripts/audit-csp-forms-v434.mjs .",
+    "audit:csp:dist": "node scripts/audit-csp-forms-v434.mjs dist-public",
+    "audit:abuse": "node scripts/audit-abuse-security-v434.mjs .",
+    "audit:abuse:dist": "node scripts/audit-abuse-security-v434.mjs dist-public",
+    "test:form-guard": "node scripts/test-form-guard-v434.mjs",
+    "test:lead-bridge": "node scripts/test-lead-bridge-v434.mjs",
+    "qa:public": "npm run audit:public && npm run audit:performance && npm run audit:responsive && npm run audit:delivery && npm run audit:boundary && npm run audit:csp && npm run audit:abuse && npm run test:form-guard && npm run test:lead-bridge && npm run build:public && npm run audit:dist && npm run audit:performance:dist && npm run audit:responsive:dist && npm run audit:delivery:dist && npm run audit:boundary:dist && npm run audit:csp:dist && npm run audit:abuse:dist",
+    "publish:preview": "node scripts/publish-pages-preview.mjs"
+  }
+}

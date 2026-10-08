@@ -1,0 +1,26 @@
+{
+  "version": "v422",
+  "deploy_files": 623,
+  "deploy_bytes": 29290242,
+  "by_extension": {
+    ".avif": 69,
+    ".css": 33,
+    ".html": 204,
+    ".ico": 1,
+    ".jpg": 43,
+    ".js": 15,
+    ".json": 8,
+    ".png": 8,
+    ".svg": 2,
+    ".txt": 1,
+    ".webmanifest": 2,
+    ".webp": 229,
+    ".woff2": 5,
+    ".xml": 1,
+    "<none>": 2
+  },
+  "source_preload_dedupe": 47,
+  "legacy_raster_fallbacks_pruned": 22,
+  "legacy_raster_bytes_pruned": 2653604,
+  "admin_version": "v414"
+}

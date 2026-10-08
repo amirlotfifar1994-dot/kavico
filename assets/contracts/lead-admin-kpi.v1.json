@@ -1,0 +1,102 @@
+{
+  "contract_version": "kavico.lead-admin-kpi.v1",
+  "model_version": "kavico.lead-admin-data-model.v1",
+  "description": "Non-PII filter dimensions and KPI definitions for the future admin dashboard.",
+  "filter_dimensions": [
+    "lifecycle.status",
+    "lifecycle.followup_state",
+    "qualification.priority",
+    "qualification.readiness",
+    "qualification.lane",
+    "qualification.route",
+    "project.service",
+    "project.stage",
+    "assignment.queue",
+    "assignment.owner_id",
+    "assignment.next_action",
+    "assignment.sla_policy_key",
+    "attribution.source_group",
+    "attribution.locale",
+    "contact_private.preferred_contact",
+    "created_at",
+    "updated_at"
+  ],
+  "privacy": {
+    "default_grouping_excludes": [
+      "contact_private.name",
+      "contact_private.phone",
+      "contact_private.email",
+      "contact_private.company",
+      "contact_private.city",
+      "project.details",
+      "project.material",
+      "project.dimensions",
+      "project.quantity",
+      "project.finish"
+    ],
+    "rule": "KPI aggregation must not group or rank by PII/free-text fields."
+  },
+  "kpis": [
+    {
+      "key": "new_leads",
+      "label": "New leads",
+      "formula": "count(leads created in period)",
+      "requires_admin_history": false
+    },
+    {
+      "key": "ready_rate",
+      "label": "Ready brief rate",
+      "formula": "count(qualification.readiness=ready) / count(all leads)",
+      "requires_admin_history": false
+    },
+    {
+      "key": "p1_share",
+      "label": "P1 share",
+      "formula": "count(qualification.priority=p1) / count(all leads)",
+      "requires_admin_history": false
+    },
+    {
+      "key": "awaiting_information",
+      "label": "Awaiting information",
+      "formula": "count(lifecycle.status=awaiting-information)",
+      "requires_admin_history": true
+    },
+    {
+      "key": "queue_backlog",
+      "label": "Queue backlog",
+      "formula": "count(open leads grouped by assignment.queue)",
+      "requires_admin_history": true
+    },
+    {
+      "key": "time_to_triage",
+      "label": "Median time to triage",
+      "formula": "median(first triaged timestamp - created_at)",
+      "requires_admin_history": true
+    },
+    {
+      "key": "sla_at_risk",
+      "label": "SLA at risk",
+      "formula": "count(open leads where assignment.sla_due_at is set and due within configured warning window)",
+      "requires_admin_history": true
+    },
+    {
+      "key": "closed_won_rate",
+      "label": "Closed-won rate",
+      "formula": "count(closed-won) / count(closed-won + closed-lost + closed-no-fit)",
+      "requires_admin_history": true
+    },
+    {
+      "key": "sample_to_commercial",
+      "label": "Sample to commercial review",
+      "formula": "count(leads transitioned sample-validation -> commercial-review) / count(leads entering sample-validation)",
+      "requires_admin_history": true
+    }
+  ],
+  "dashboard_defaults": {
+    "period": "last-30-days",
+    "compare_to": "previous-period",
+    "timezone": "Asia/Tehran",
+    "exclude_closed_from_backlog": true
+  },
+  "sla_rule": "Dashboard reads resolved due_at values from admin configuration. The public site does not define SLA durations."
+}

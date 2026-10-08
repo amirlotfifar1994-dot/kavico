@@ -1,0 +1,21 @@
+{
+  "project": "KAVICO",
+  "full_project_version": "v430",
+  "public_version": "v430",
+  "private_admin_version": "v430",
+  "public_baseline": {
+    "file": "KAVICO_v400_PRODUCTION.zip",
+    "sha256": "84d03bec065b5d999d61eaaf41103e18a2f1fbb5eba0a35136654e5bcc35c0cd",
+    "role": "verified Public production baseline"
+  },
+  "parent": {
+    "version": "v429",
+    "file": "KAVICO_v429_FULL_PROJECT_WORKFLOW_WORKLOAD_SUPERVISOR_PRIVATE_ADMIN_V429_COMPLETE.zip",
+    "sha256": "ac24c7e1eb871cea686234233101a37db145abfd1786f92a0e9f460e1e2790ff"
+  },
+  "milestone": "optional business-hours SLA, durable operator capacity, controlled handoff, supervisor SoD and rejected-case reopen",
+  "migration": "direct v429 -> v430 preserving current case/quarantine/abuse data and adding capacity/handoff/reopen durable state",
+  "business_hours_boundary": "opt-in, fixed UTC offset calendar; no IANA/DST claim",
+  "capacity_boundary": "automatic assignment/handoff are capacity-aware; manual assignment is not claimed universally capacity-blocked",
+  "privacy_boundary": "supervisor queue/capacity/SLA/reopen metadata do not decrypt customer quarantine payload; authorized release remains payload-decryption boundary"
+}

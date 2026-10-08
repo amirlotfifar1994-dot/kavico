@@ -1,0 +1,41 @@
+{
+  "manifest_version": "kavico.lead-admin-manifest.v1",
+  "release": "400",
+  "generated_date": "2026-08-16",
+  "description": "Single discovery document for future KAVICO admin/CRM integration. Public production contains contracts only; no admin interface or backend is exposed.",
+  "contracts": {
+    "public_conversion": {
+      "version": "kavico.lead-conversion.v1",
+      "url": "/assets/contracts/lead-conversion.v1.schema.json"
+    },
+    "public_admin_export": {
+      "version": "kavico.lead-admin-export.v1",
+      "url": "/assets/contracts/lead-admin-export.v1.schema.json"
+    },
+    "lifecycle": {
+      "version": "kavico.lead-lifecycle.v1",
+      "url": "/assets/contracts/lead-lifecycle.v1.json"
+    },
+    "admin_data_model": {
+      "version": "kavico.lead-admin-data-model.v1",
+      "url": "/assets/contracts/lead-admin-data-model.v1.schema.json"
+    },
+    "admin_ingestion": {
+      "version": "kavico.lead-admin-ingestion.v1",
+      "url": "/assets/contracts/lead-admin-ingestion.v1.json"
+    },
+    "admin_ui": {
+      "version": "kavico.lead-admin-ui.v1",
+      "url": "/assets/contracts/lead-admin-ui.v1.json"
+    },
+    "admin_kpi": {
+      "version": "kavico.lead-admin-kpi.v1",
+      "url": "/assets/contracts/lead-admin-kpi.v1.json"
+    }
+  },
+  "public_boundary": {
+    "admin_routes_exposed": false,
+    "backend_routes_exposed": false,
+    "note": "The manifest and schemas are static integration specifications only."
+  }
+}

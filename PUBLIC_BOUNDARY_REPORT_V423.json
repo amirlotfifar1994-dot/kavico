@@ -1,0 +1,45 @@
+{
+  "version": "v423",
+  "policy": "Public deploy exposes only contracts required by the browser-to-lead bridge; complete contract lineage remains in Source/private admin.",
+  "source_contract_count": 8,
+  "public_deploy_contract_allowlist": [
+    "lead-admin-export.v1.schema.json",
+    "lead-conversion.v1.schema.json",
+    "lead-lifecycle.v1.json"
+  ],
+  "internal_contracts_excluded_from_deploy": [
+    "lead-admin-data-model.v1.schema.json",
+    "lead-admin-ingestion.v1.json",
+    "lead-admin-kpi.v1.json",
+    "lead-admin-manifest.v1.json",
+    "lead-admin-ui.v1.json"
+  ],
+  "internal_contract_bytes_excluded": 22205,
+  "public_contract_bytes": 9939,
+  "public_form_internal_metadata_removed": [
+    "admin_manifest_version",
+    "admin_manifest_url",
+    "admin_model_version",
+    "admin_ingestion_contract_version",
+    "admin_ui_contract_version",
+    "admin_kpi_contract_version"
+  ],
+  "public_form_bridge_fields_retained": [
+    "event_contract_version",
+    "event_schema",
+    "admin_contract_version",
+    "admin_export_schema",
+    "lifecycle_mapping_version",
+    "lifecycle_status",
+    "followup_state",
+    "assignment_queue",
+    "sla_policy_key",
+    "next_action",
+    "admin_export"
+  ],
+  "admin_ingestion_compatibility": "v414 ingestPublicBrief does not require the removed metadata; its integration suite passes in qa:full.",
+  "shared_contract_header_policy": "X-Robots-Tag: noindex, nofollow, noarchive",
+  "deploy_sri_algorithm": "SHA-384",
+  "source_html_sri": "not injected; Source remains modular/editable",
+  "deploy_html_sri": "all local stylesheet refs and generated runtime script refs"
+}

@@ -1,0 +1,14 @@
+{
+  "full_project_version": "v428",
+  "public_version": "v428",
+  "private_admin_version": "v428",
+  "parent": {
+    "version": "v427",
+    "sha256": "4801f0f10d4c46c6d2d3017e4f71400501b3695f33e05ae661bcb062983bee01"
+  },
+  "public_baseline_v400_sha256": "84d03bec065b5d999d61eaaf41103e18a2f1fbb5eba0a35136654e5bcc35c0cd",
+  "milestone": "quarantine case review, assignment, SLA, encrypted notes, escalation and dashboard",
+  "migration": "v427 -> v428 preserves quarantine/abuse rows; backfills pending SLA and case metadata",
+  "privacy_boundary": "case list/detail never decrypts quarantine customer payload; explicit release does",
+  "notes_guard_scope": "heuristic rejection of common email/URL/phone-like patterns; not full DLP"
+}

@@ -1,0 +1,15 @@
+{
+  "version": "v422",
+  "browser_coverage_status": "blocked_by_environment",
+  "chromium_error": "net::ERR_BLOCKED_BY_ADMINISTRATOR",
+  "selector_pruning_applied": false,
+  "reason": "No browser-assisted coverage evidence; unsafe selector pruning intentionally refused.",
+  "surface_bundle_count": 20,
+  "large_surface_bundles_ge_100kb": 19,
+  "largest_surface_bytes": 237134,
+  "exact_common_prefix_raw_bytes": 11262,
+  "exact_common_prefix_safe_rule_boundary_bytes": 11255,
+  "shared_prefix_extraction_applied": false,
+  "shared_prefix_tradeoff": "Would add an extra CSS fetch on LTR pages or change cascade placement; rejected for v422.",
+  "next_safe_path": "Run browser coverage in an environment that permits local navigation, then prune only selectors proven unused across every consumer page/state."
+}

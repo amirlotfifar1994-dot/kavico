@@ -1,0 +1,10 @@
+{
+  "version": "v423",
+  "dist_public_files": 618,
+  "dist_public_bytes": 29312410,
+  "internal_contract_files_excluded": 5,
+  "internal_contract_bytes_excluded": 22205,
+  "sri_stylesheet_references_verified": 405,
+  "sri_script_references_verified": 136,
+  "public_contracts": 3
+}

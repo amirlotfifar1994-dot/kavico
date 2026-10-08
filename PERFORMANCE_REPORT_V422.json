@@ -1,0 +1,16 @@
+{
+  "version": "v422",
+  "html_files": 204,
+  "indexable_pages": 124,
+  "legacy_redirect_stubs": 68,
+  "lcp_preload_pages": 110,
+  "max_stylesheets_per_page": 4,
+  "max_scripts_per_page": 4,
+  "total_stylesheet_references": 405,
+  "total_script_references": 380,
+  "public_html_bytes": 4743096,
+  "aggregate_static_css_js_reference_bytes": 44945642,
+  "unique_static_css_js_dependencies": 48,
+  "request_contract": "v422 source: merged global CSS, modular deferred JS <=4, redirects zero CSS/JS",
+  "errors": []
+}

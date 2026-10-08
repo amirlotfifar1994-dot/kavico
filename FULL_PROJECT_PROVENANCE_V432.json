@@ -1,0 +1,19 @@
+{
+  "full_project_version": "v432",
+  "public_version": "v432",
+  "private_admin_version": "v432",
+  "parent": {
+    "version": "v431",
+    "artifact": "KAVICO_v431_FULL_PROJECT_VERSIONED_CALENDAR_SHIFTS_RESERVATIONS_HANDOFF_APPROVAL_PRIVATE_ADMIN_V431_COMPLETE.zip",
+    "sha256": "a573c2fb8120a77cbba2be75e77e08643dc9094de750985fe5a687511948871a"
+  },
+  "public_baseline_v400_sha256": "84d03bec065b5d999d61eaaf41103e18a2f1fbb5eba0a35136654e5bcc35c0cd",
+  "milestone": "IANA/DST calendar, calendar approval/promotion, date exceptions, shift overrides, reservation recovery and capacity forecast",
+  "migration": "v431 -> v432 preserves existing fixed-offset calendar/cases and adds IANA governance/recovery tables",
+  "boundaries": {
+    "timezone": "IANA/DST uses Node Intl; fixed-offset remains supported",
+    "approval": "rollout-safe configuration; dedicated promotion requires approved state",
+    "recovery": "dry-run by default; apply explicit and audited",
+    "forecast": "deterministic operational capacity/load indicator; not predictive ML/statistical model"
+  }
+}

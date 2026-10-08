@@ -1,0 +1,20 @@
+{
+  "full_project_version": "v434",
+  "public_version": "v434",
+  "private_admin_version": "v434",
+  "parent": {
+    "version": "v433",
+    "artifact": "KAVICO_v433_FULL_PROJECT_SCOPED_CALENDAR_QUORUM_LEAVE_LEASE_FORECAST_PRIVATE_ADMIN_V433_COMPLETE.zip",
+    "sha256": "db0a2e6f2edd6c29ec021f28f81a82a807b1a0ada582a7614e0fc4df51a93343"
+  },
+  "public_baseline_v400_sha256": "84d03bec065b5d999d61eaaf41103e18a2f1fbb5eba0a35136654e5bcc35c0cd",
+  "milestone": "case SLA scope pinning, leave entitlement, lease owner recovery, scoped forecast trends and planning change approval",
+  "migration": "v433 -> v434 preserves existing planning/quarantine data and adds durable SLA context, entitlement, planning approval and lease-recovery history",
+  "boundaries": {
+    "entitlement_enforcement": "opt-in",
+    "planning_change": "approval + requester/reviewer separation",
+    "lease_token": "raw token never persisted",
+    "forecast": "operational comparison, not predictive model",
+    "payload": "not decrypted for planning views"
+  }
+}

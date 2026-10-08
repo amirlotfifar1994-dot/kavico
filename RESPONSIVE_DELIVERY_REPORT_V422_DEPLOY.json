@@ -1,0 +1,13 @@
+{
+  "version": "v422",
+  "html_files": 204,
+  "image_tags": 624,
+  "srcset_tags": 348,
+  "responsive_eligible_tags": 348,
+  "responsive_covered_tags": 348,
+  "responsive_coverage_pct": 100,
+  "smaller_webp_opportunities_remaining": 0,
+  "responsive_lcp_images": 120,
+  "responsive_lcp_preloads": 120,
+  "errors": []
+}

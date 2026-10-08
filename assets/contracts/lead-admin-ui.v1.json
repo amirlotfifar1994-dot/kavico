@@ -1,0 +1,180 @@
+{
+  "contract_version": "kavico.lead-admin-ui.v1",
+  "model_version": "kavico.lead-admin-data-model.v1",
+  "description": "Future authenticated admin Lead List and Lead Detail specification. No admin UI is shipped in the public production site.",
+  "permissions": {
+    "roles": [
+      "viewer",
+      "reviewer",
+      "commercial",
+      "technical",
+      "admin"
+    ],
+    "pii_rule": "contact_private is hidden unless the authenticated role has contact:read permission.",
+    "mutation_rule": "Lifecycle/assignment mutations require lead:write and must append an activity event."
+  },
+  "lead_list": {
+    "default_columns": [
+      "lead_reference",
+      "lifecycle.status",
+      "qualification.priority",
+      "qualification.readiness",
+      "project.service",
+      "project.stage",
+      "assignment.queue",
+      "assignment.next_action",
+      "created_at"
+    ],
+    "optional_columns": [
+      "contact_private.name",
+      "contact_private.company",
+      "contact_private.preferred_contact",
+      "qualification.lane",
+      "qualification.route",
+      "attribution.source_group",
+      "assignment.owner_id",
+      "assignment.sla_due_at",
+      "updated_at"
+    ],
+    "default_sort": [
+      {
+        "field": "qualification.priority",
+        "direction": "asc",
+        "rank": [
+          "p1",
+          "p2",
+          "p3"
+        ]
+      },
+      {
+        "field": "created_at",
+        "direction": "desc"
+      }
+    ],
+    "row_badges": {
+      "priority": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "readiness": [
+        "ready",
+        "reviewable",
+        "discovery"
+      ],
+      "status": [
+        "submitted",
+        "triaged",
+        "awaiting-information",
+        "technical-review",
+        "commercial-review",
+        "sample-validation",
+        "repeat-production-review",
+        "closed-won",
+        "closed-lost",
+        "closed-no-fit"
+      ]
+    },
+    "empty_state": "No leads match the current filters. Preserve filter chips and offer reset; do not imply there are no submissions globally."
+  },
+  "lead_detail": {
+    "sections": [
+      {
+        "id": "overview",
+        "fields": [
+          "lead_reference",
+          "created_at",
+          "updated_at",
+          "lifecycle.status",
+          "qualification.priority",
+          "qualification.readiness",
+          "assignment.queue",
+          "assignment.next_action"
+        ]
+      },
+      {
+        "id": "contact-private",
+        "sensitive": true,
+        "fields": [
+          "contact_private.name",
+          "contact_private.phone",
+          "contact_private.email",
+          "contact_private.company",
+          "contact_private.city",
+          "contact_private.preferred_contact"
+        ]
+      },
+      {
+        "id": "project",
+        "fields": [
+          "project.service",
+          "project.stage",
+          "project.material",
+          "project.dimensions",
+          "project.part_type",
+          "project.quantity",
+          "project.surface_state",
+          "project.project_priority",
+          "project.timeline",
+          "project.finish",
+          "project.details"
+        ]
+      },
+      {
+        "id": "qualification",
+        "fields": [
+          "qualification.readiness",
+          "qualification.priority",
+          "qualification.lane",
+          "qualification.route",
+          "qualification.score",
+          "qualification.basis"
+        ]
+      },
+      {
+        "id": "assignment",
+        "fields": [
+          "assignment.queue",
+          "assignment.owner_id",
+          "assignment.sla_policy_key",
+          "assignment.sla_due_at",
+          "assignment.next_action"
+        ]
+      },
+      {
+        "id": "attribution",
+        "fields": [
+          "attribution.source_group",
+          "attribution.locale",
+          "attribution.source_path",
+          "attribution.utm_source",
+          "attribution.utm_medium",
+          "attribution.utm_campaign"
+        ]
+      },
+      {
+        "id": "history",
+        "fields": [
+          "lifecycle.history"
+        ]
+      }
+    ],
+    "actions": [
+      "assign-owner",
+      "change-lifecycle-status",
+      "set-next-action",
+      "request-information",
+      "add-internal-note",
+      "copy-lead-reference",
+      "mark-closed-won",
+      "mark-closed-lost",
+      "mark-closed-no-fit"
+    ],
+    "guardrails": [
+      "All status changes must satisfy lead-lifecycle.v1 allowed_transitions.",
+      "Closing requires a reason code stored in an activity event.",
+      "PII is never copied into internal notes automatically.",
+      "SLA policy is a configuration key, not a public response-time promise."
+    ]
+  }
+}

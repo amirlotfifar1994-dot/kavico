@@ -1,0 +1,14 @@
+{
+  "version": "v427",
+  "generated_from_source": true,
+  "files": 618,
+  "bytes": 29365424,
+  "html_files": 204,
+  "css_references": 405,
+  "script_references": 136,
+  "max_scripts_per_page": 1,
+  "runtime_pages": 136,
+  "deterministic_runtime_bundles": 14,
+  "private_admin_files": 0,
+  "note": "dist-public is generated during QA and excluded from the source release ZIP."
+}

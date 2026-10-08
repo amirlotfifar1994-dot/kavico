@@ -1,0 +1,13 @@
+{
+  "version": "v423",
+  "target": "dist-public",
+  "public_contracts": [
+    "lead-admin-export.v1.schema.json",
+    "lead-conversion.v1.schema.json",
+    "lead-lifecycle.v1.json"
+  ],
+  "source_contract_count": 3,
+  "sri_stylesheets_verified": 405,
+  "sri_scripts_verified": 136,
+  "errors": []
+}

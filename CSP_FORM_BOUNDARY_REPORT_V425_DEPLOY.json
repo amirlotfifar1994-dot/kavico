@@ -1,0 +1,15 @@
+{
+  "version": "v425",
+  "target": "dist-public",
+  "html_files": 204,
+  "inline_executable_scripts": 132,
+  "theme_bootstrap_hash_matches": 132,
+  "json_ld_blocks": 132,
+  "inline_event_attributes": 0,
+  "inline_style_attributes": 0,
+  "csp_length": 445,
+  "csp_sha256_hashes": 1,
+  "forms_verified": 2,
+  "external_submission_hints": 0,
+  "errors": []
+}

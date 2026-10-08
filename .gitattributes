@@ -1,0 +1,13 @@
+# Store files byte-for-byte. Inline-script CSP hashes and the SHA-256 manifests
+# depend on exact bytes, so git must not rewrite line endings (CRLF <-> LF)
+# on checkout -- otherwise Netlify (Linux) would build different bytes than
+# were audited on Windows.
+* -text
+*.webp binary
+*.avif binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.ico binary
+*.woff2 binary
+*.zip binary

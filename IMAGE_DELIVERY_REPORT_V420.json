@@ -1,0 +1,12 @@
+{
+  "version": "v420",
+  "policy": "replace an HTML img src with an existing same-dimension WebP only when WebP is at least 10% smaller; keep original source assets and social metadata",
+  "img_src_occurrences_changed": 328,
+  "unique_physical_image_pairs": 57,
+  "unique_pair_byte_reduction": 2633462,
+  "occurrence_weighted_byte_reduction": 15525190,
+  "webp_img_src_occurrences_after": 336,
+  "jpg_jpeg_img_src_occurrences_after": 24,
+  "lazy_images_with_fetchpriority_low": 370,
+  "note": "Occurrence-weighted savings are a deterministic markup/file-size comparison, not measured CDN/network transfer."
+}

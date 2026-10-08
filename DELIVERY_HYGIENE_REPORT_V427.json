@@ -1,0 +1,9 @@
+{
+  "version": "v427",
+  "target": "source",
+  "html_files": 204,
+  "duplicate_preloads": 0,
+  "deploy_prunable_legacy_rasters_remaining": 0,
+  "deploy_prunable_bytes_remaining": 0,
+  "errors": []
+}

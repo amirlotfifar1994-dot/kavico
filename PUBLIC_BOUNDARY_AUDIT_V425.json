@@ -1,0 +1,13 @@
+{
+  "version": "v425",
+  "target": "source",
+  "public_contracts": [
+    "lead-admin-export.v1.schema.json",
+    "lead-conversion.v1.schema.json",
+    "lead-lifecycle.v1.json"
+  ],
+  "source_contract_count": 8,
+  "sri_stylesheets_verified": 0,
+  "sri_scripts_verified": 0,
+  "errors": []
+}

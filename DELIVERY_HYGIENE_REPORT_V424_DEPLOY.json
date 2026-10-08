@@ -1,0 +1,12 @@
+{
+  "version": "v424",
+  "target": "dist-public",
+  "html_files": 204,
+  "preload_tags": 0,
+  "image_preloads": 0,
+  "font_preloads": 0,
+  "duplicate_preloads": 0,
+  "deploy_prunable_legacy_rasters_remaining": 0,
+  "deploy_prunable_bytes_remaining": 0,
+  "errors": []
+}

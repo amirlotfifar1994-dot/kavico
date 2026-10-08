@@ -1,0 +1,103 @@
+{
+  "contract_version": "kavico.lead-admin-ingestion.v1",
+  "description": "Deterministic mapping from the public Project Brief submission into the private future-admin data model.",
+  "source_contracts": {
+    "conversion_event": "kavico.lead-conversion.v1",
+    "admin_export": "kavico.lead-admin-export.v1",
+    "lifecycle_mapping": "kavico.lead-lifecycle.v1"
+  },
+  "target_model": "kavico.lead-admin-data-model.v1",
+  "privacy_boundary": {
+    "private_form_fields": [
+      "name",
+      "phone",
+      "email",
+      "company",
+      "city",
+      "details",
+      "material",
+      "dimensions",
+      "quantity",
+      "finish"
+    ],
+    "non_pii_operational_fields": [
+      "service",
+      "project_stage",
+      "part_type",
+      "surface_state",
+      "project_priority",
+      "timeline",
+      "preferred_contact",
+      "lead_readiness",
+      "followup_priority",
+      "followup_lane",
+      "lead_route",
+      "qualification_score",
+      "source_group",
+      "conversion_locale",
+      "assignment_queue",
+      "sla_policy_key",
+      "next_action"
+    ],
+    "rule": "Private form fields may populate contact_private/project only inside the authenticated admin datastore. They must not be copied into admin_export, KPI dimensions, browser analytics events or public logs."
+  },
+  "idempotency": {
+    "primary_event_key": "event_id",
+    "correlation_key": "lead_reference",
+    "rule": "Reject duplicate event_id. Reuse lead_reference only for explicit follow-up submissions; never merge records by phone/email/name."
+  },
+  "server_generated": {
+    "lead_id": "Generate a non-PII random identifier at ingestion time.",
+    "created_at": "Use first accepted event timestamp.",
+    "updated_at": "Use latest accepted admin event timestamp."
+  },
+  "field_mapping": {
+    "lead_reference": "lead_reference",
+    "contact_private.name": "name",
+    "contact_private.phone": "phone",
+    "contact_private.email": "email",
+    "contact_private.company": "company",
+    "contact_private.city": "city",
+    "contact_private.preferred_contact": "preferred_contact",
+    "project.service": "service",
+    "project.stage": "project_stage",
+    "project.material": "material",
+    "project.dimensions": "dimensions",
+    "project.part_type": "part_type",
+    "project.quantity": "quantity",
+    "project.surface_state": "surface_state",
+    "project.project_priority": "project_priority",
+    "project.timeline": "timeline",
+    "project.finish": "finish",
+    "project.details": "details",
+    "qualification.readiness": "lead_readiness",
+    "qualification.priority": "followup_priority",
+    "qualification.lane": "followup_lane",
+    "qualification.route": "lead_route",
+    "qualification.score": "qualification_score",
+    "qualification.basis": "qualification_basis",
+    "lifecycle.status": "lifecycle_status",
+    "lifecycle.followup_state": "followup_state",
+    "assignment.queue": "assignment_queue",
+    "assignment.sla_policy_key": "sla_policy_key",
+    "assignment.next_action": "next_action",
+    "attribution.source_group": "source_group",
+    "attribution.locale": "conversion_locale",
+    "attribution.source_path": "source_path",
+    "attribution.utm_source": "utm_source",
+    "attribution.utm_medium": "utm_medium",
+    "attribution.utm_campaign": "utm_campaign",
+    "audit.source_event_id": "event_id"
+  },
+  "validation_order": [
+    "validate form required fields",
+    "parse and validate conversion_event",
+    "validate admin_export",
+    "verify event_id/lead_reference equality across payloads",
+    "apply privacy boundary",
+    "apply field mapping",
+    "seed lifecycle history with submitted event",
+    "persist atomically"
+  ],
+  "failure_policy": "Reject ingestion atomically if contract validation, correlation or privacy-boundary checks fail. Preserve the original form submission for controlled manual recovery only."
+}

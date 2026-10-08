@@ -1,0 +1,19 @@
+{
+  "full_project_version": "v431",
+  "public_version": "v431",
+  "private_admin_version": "v431",
+  "parent": {
+    "version": "v430",
+    "artifact": "KAVICO_v430_FULL_PROJECT_BUSINESS_HOURS_CAPACITY_HANDOFF_SUPERVISOR_REOPEN_PRIVATE_ADMIN_V430_COMPLETE.zip",
+    "sha256": "f97e48851be22b1cce546be0e838be4c14e4dacfa030c55733c35918610efdfd"
+  },
+  "public_baseline_v400_sha256": "84d03bec065b5d999d61eaaf41103e18a2f1fbb5eba0a35136654e5bcc35c0cd",
+  "milestone": "versioned business calendar, operator shifts, capacity reservations, handoff approval and operational SLA forecast",
+  "migration": "v430 -> v431 preserves existing cases and adds durable planning tables",
+  "planning_boundaries": {
+    "timezone": "fixed UTC offset; no IANA/DST claim",
+    "shifts": "restrict only when configured",
+    "handoff_approval": "opt-in",
+    "forecast": "operational horizon indicator; not predictive modeling"
+  }
+}

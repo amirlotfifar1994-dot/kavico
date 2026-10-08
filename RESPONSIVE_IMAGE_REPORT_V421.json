@@ -1,0 +1,32 @@
+{
+  "version": "v421",
+  "html_files": 204,
+  "src_swaps_to_smaller_webp_occurrences": 16,
+  "unique_source_swaps": 5,
+  "occurrence_bytes_saved_by_src_swaps": 107376,
+  "srcset_added": 344,
+  "sizes_added": 130,
+  "responsive_assets_activated": 62,
+  "unique_swaps": {
+    "assets/img/portfolio-4.jpg": {
+      "to": "assets/img/portfolio-4.webp",
+      "saved": 6163
+    },
+    "assets/img/faq.jpg": {
+      "to": "assets/img/faq.webp",
+      "saved": 8897
+    },
+    "assets/img/quality.jpg": {
+      "to": "assets/img/quality.webp",
+      "saved": 7985
+    },
+    "assets/img/landing-karaj.jpg": {
+      "to": "assets/img/landing-karaj.webp",
+      "saved": 5413
+    },
+    "assets/img/service-pvd-hero.jpg": {
+      "to": "assets/img/service-pvd-hero.webp",
+      "saved": 4007
+    }
+  }
+}

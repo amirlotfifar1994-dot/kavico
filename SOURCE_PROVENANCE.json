@@ -1,0 +1,14 @@
+{
+  "project": "KAVICO",
+  "assembly": "Public v430 + Private Admin v430",
+  "current_public_version": "v430",
+  "current_private_admin_version": "v430",
+  "public_baseline_file": "KAVICO_v400_PRODUCTION.zip",
+  "public_baseline_sha256": "84d03bec065b5d999d61eaaf41103e18a2f1fbb5eba0a35136654e5bcc35c0cd",
+  "immediate_parent": {
+    "file": "KAVICO_v429_FULL_PROJECT_WORKFLOW_WORKLOAD_SUPERVISOR_PRIVATE_ADMIN_V429_COMPLETE.zip",
+    "sha256": "ac24c7e1eb871cea686234233101a37db145abfd1786f92a0e9f460e1e2790ff"
+  },
+  "current_provenance": "FULL_PROJECT_PROVENANCE_V430.json",
+  "assembly_policy": "Historical reports/manifests remain lineage evidence. Active runtime is Public v430 + Private Admin v430. Generated dist-public is excluded from source release and rebuilt during QA."
+}

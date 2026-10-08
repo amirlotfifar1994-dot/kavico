@@ -1,0 +1,36 @@
+{
+  "version": "v419",
+  "parent": "v418",
+  "scope": "static public request/dependency hardening",
+  "baseline": {
+    "stylesheet_references": 1017,
+    "script_references": 720,
+    "combined_css_js_references": 1737,
+    "max_stylesheets_per_page": 7,
+    "max_scripts_per_page": 5,
+    "aggregate_static_css_js_reference_bytes": 47987350,
+    "public_html_bytes": 4718489,
+    "deployable_public_files": 653
+  },
+  "v419": {
+    "stylesheet_references": 541,
+    "script_references": 380,
+    "combined_css_js_references": 921,
+    "max_stylesheets_per_page": 5,
+    "max_scripts_per_page": 4,
+    "aggregate_static_css_js_reference_bytes": 45240354,
+    "public_html_bytes": 4689233,
+    "deployable_public_files": 649,
+    "legacy_redirect_stubs": 68,
+    "lcp_preload_pages": 110
+  },
+  "delta": {
+    "stylesheet_references": -476,
+    "script_references": -340,
+    "combined_css_js_references": -816,
+    "aggregate_static_css_js_reference_bytes": -2746996,
+    "public_html_bytes": -29256,
+    "deployable_public_files": -4
+  },
+  "claim_boundary": "Static deterministic measurements only; no Lighthouse or field Core Web Vitals score is claimed."
+}

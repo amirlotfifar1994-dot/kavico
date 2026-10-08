@@ -1,0 +1,20 @@
+{
+  "version": "v426",
+  "root": "KAVICO_v427_FULL_PROJECT",
+  "html_files": 204,
+  "indexable_pages": 124,
+  "local_refs_checked": 10846,
+  "images_checked": 624,
+  "webp_img_src": 352,
+  "jpg_img_src": 8,
+  "lazy_images_low_priority": 370,
+  "json_ld_blocks": 132,
+  "v419_baseline_body_pages": 136,
+  "deploy_page_runtime_bundled": false,
+  "legacy_redirect_stubs": 68,
+  "lcp_preload_pages": 110,
+  "fa_article_heroes": 32,
+  "en_article_heroes": 32,
+  "errors": [],
+  "warnings": []
+}

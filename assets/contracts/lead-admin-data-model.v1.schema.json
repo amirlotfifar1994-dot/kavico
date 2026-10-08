@@ -1,0 +1,417 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kavico.ir/assets/contracts/lead-admin-data-model.v1.schema.json",
+  "title": "KAVICO Lead Admin Data Model v1",
+  "description": "Private future-admin lead record. PII is isolated in contact_private; operational list/KPI fields live outside that object.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "model_version",
+    "lead_id",
+    "lead_reference",
+    "created_at",
+    "updated_at",
+    "contact_private",
+    "project",
+    "qualification",
+    "lifecycle",
+    "assignment",
+    "attribution",
+    "audit"
+  ],
+  "properties": {
+    "model_version": {
+      "const": "kavico.lead-admin-data-model.v1"
+    },
+    "lead_id": {
+      "type": "string",
+      "pattern": "^lead_[A-Za-z0-9-]{20,80}$"
+    },
+    "lead_reference": {
+      "type": "string",
+      "pattern": "^KVC-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "contact_private": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Sensitive contact data. Access must be permission-gated and excluded from KPI/grouping exports by default.",
+      "required": [
+        "name",
+        "phone",
+        "preferred_contact"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "company": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "preferred_contact": {
+          "enum": [
+            "phone",
+            "whatsapp",
+            "email"
+          ]
+        }
+      }
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "service",
+        "stage",
+        "details"
+      ],
+      "properties": {
+        "service": {
+          "enum": [
+            "unsure",
+            "pvd-industrial",
+            "pvd-decorative",
+            "pvd-faucets",
+            "nickel-chrome",
+            "polishing"
+          ]
+        },
+        "stage": {
+          "enum": [
+            "evaluation",
+            "prototype",
+            "quote",
+            "repeat"
+          ]
+        },
+        "material": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dimensions": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "part_type": {
+          "enum": [
+            "unknown",
+            "flat",
+            "cylindrical",
+            "faucet-hardware",
+            "complex",
+            "ceramic",
+            "other"
+          ]
+        },
+        "quantity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "surface_state": {
+          "enum": [
+            "unknown",
+            "raw",
+            "polished",
+            "plated",
+            "coated",
+            "used"
+          ]
+        },
+        "project_priority": {
+          "enum": [
+            "balanced",
+            "appearance",
+            "wear",
+            "corrosion",
+            "surface"
+          ]
+        },
+        "timeline": {
+          "enum": [
+            "flexible",
+            "under-2w",
+            "2-4w",
+            "over-1m"
+          ]
+        },
+        "finish": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "details": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "qualification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "readiness",
+        "priority",
+        "lane",
+        "route",
+        "score",
+        "basis"
+      ],
+      "properties": {
+        "readiness": {
+          "enum": [
+            "ready",
+            "reviewable",
+            "discovery"
+          ]
+        },
+        "priority": {
+          "enum": [
+            "p1",
+            "p2",
+            "p3"
+          ]
+        },
+        "lane": {
+          "enum": [
+            "discovery",
+            "repeat-production",
+            "sample-validation",
+            "production-quote",
+            "engineering-review",
+            "technical-feasibility",
+            "technical-review"
+          ]
+        },
+        "route": {
+          "enum": [
+            "service-discovery",
+            "repeat-production",
+            "sample-validation",
+            "production-quote",
+            "engineering-review",
+            "technical-feasibility"
+          ]
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 200
+        },
+        "basis": {
+          "type": "string"
+        }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "followup_state",
+        "history"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "submitted",
+            "triaged",
+            "awaiting-information",
+            "technical-review",
+            "commercial-review",
+            "sample-validation",
+            "repeat-production-review",
+            "closed-won",
+            "closed-lost",
+            "closed-no-fit"
+          ]
+        },
+        "followup_state": {
+          "type": "string"
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "event_id",
+              "at",
+              "from",
+              "to"
+            ],
+            "properties": {
+              "event_id": {
+                "type": "string"
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "from": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "to": {
+                "type": "string"
+              },
+              "actor_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "queue",
+        "sla_policy_key",
+        "next_action"
+      ],
+      "properties": {
+        "queue": {
+          "type": "string"
+        },
+        "owner_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sla_policy_key": {
+          "type": "string"
+        },
+        "sla_due_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "next_action": {
+          "type": "string"
+        }
+      }
+    },
+    "attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_group",
+        "locale"
+      ],
+      "properties": {
+        "source_group": {
+          "type": "string"
+        },
+        "locale": {
+          "enum": [
+            "fa",
+            "en"
+          ]
+        },
+        "source_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "utm_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "utm_medium": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "utm_campaign": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ingestion_contract_version",
+        "source_event_id",
+        "source_contract_version",
+        "admin_export_version"
+      ],
+      "properties": {
+        "ingestion_contract_version": {
+          "const": "kavico.lead-admin-ingestion.v1"
+        },
+        "source_event_id": {
+          "type": "string"
+        },
+        "source_contract_version": {
+          "const": "kavico.lead-conversion.v1"
+        },
+        "admin_export_version": {
+          "const": "kavico.lead-admin-export.v1"
+        },
+        "last_admin_event_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

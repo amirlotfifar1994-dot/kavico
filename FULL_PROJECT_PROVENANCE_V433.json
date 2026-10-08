@@ -1,0 +1,15 @@
+{
+  "full_project_version": "v433",
+  "public_version": "v433",
+  "private_admin_version": "v433",
+  "parent": {
+    "version": "v432",
+    "artifact": "KAVICO_v432_FULL_PROJECT_IANA_DST_CALENDAR_APPROVAL_EXCEPTIONS_RECOVERY_PRIVATE_ADMIN_V432_COMPLETE.zip",
+    "sha256": "e002d956fa3484be6206f3a4f3cf465dc25b7b0ee76d2aef2014c6c7bc9a6c08"
+  },
+  "public_baseline_v400_sha256": "84d03bec065b5d999d61eaaf41103e18a2f1fbb5eba0a35136654e5bcc35c0cd",
+  "milestone": "scoped calendar governance, approval quorum, leave workflow, capacity lease heartbeat and forecast history",
+  "migration": "v432 -> v433 preserves planning/case data and adds quorum votes, leave requests and forecast history",
+  "scope_boundary": "team/location scope resolves operator availability calendars; intake SLA without operator context uses global/fallback calendar",
+  "privacy_boundary": "planning/list/history operations use operational metadata and do not decrypt customer quarantine payload"
+}

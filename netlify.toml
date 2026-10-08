@@ -1,0 +1,7 @@
+[build]
+  command = "node scripts/build-public-deploy.mjs"
+  publish = "dist-public"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

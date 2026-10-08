@@ -1,0 +1,15 @@
+{
+  "full_project_version": "v429",
+  "public_version": "v429",
+  "private_admin_version": "v429",
+  "parent": {
+    "version": "v428",
+    "artifact": "KAVICO_v428_FULL_PROJECT_QUARANTINE_CASE_REVIEW_SLA_ESCALATION_PRIVATE_ADMIN_V428_COMPLETE.zip",
+    "sha256": "2dda4ab9becd941251b03d9708f098081b9832bd609afb04ecdac4c9fc80320c"
+  },
+  "public_baseline_v400_sha256": "84d03bec065b5d999d61eaaf41103e18a2f1fbb5eba0a35136654e5bcc35c0cd",
+  "milestone": "quarantine workflow state machine, workload balancing, SLA pause/resume, supervisor review and automatic escalation",
+  "migration": "v428 -> v429 preserves existing quarantine/case/abuse data and adds workflow/supervisor durable history",
+  "privacy_boundary": "workflow/list/workload/SLA/supervisor operations do not decrypt customer quarantine payload; explicit authorized release does",
+  "automation_boundary": "workload recommendations never silently move existing owners; auto-assignment is explicit; automatic escalation is audited fail-safe policy"
+}

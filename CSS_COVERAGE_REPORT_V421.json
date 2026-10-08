@@ -1,0 +1,110 @@
+{
+  "version": "v421",
+  "large_css_files_ge_100kb": 20,
+  "largest_css_bytes": 237134,
+  "v389_surface_files": 20,
+  "v389_exact_common_prefix_bytes": 11262,
+  "decision": "No automatic selector pruning in v421; retain cascade safety. Responsive image delivery is the release optimization.",
+  "large_css": [
+    {
+      "file": "assets/css/bundles/surface-db74c63469.v389.css",
+      "bytes": 237134,
+      "html_references": 2
+    },
+    {
+      "file": "assets/css/bundles/surface-eab9fff600.v389.css",
+      "bytes": 165215,
+      "html_references": 10
+    },
+    {
+      "file": "assets/css/bundles/surface-9d5eaca29b.v389.css",
+      "bytes": 162177,
+      "html_references": 2
+    },
+    {
+      "file": "assets/css/bundles/surface-0d2a32be6c.v389.css",
+      "bytes": 160051,
+      "html_references": 8
+    },
+    {
+      "file": "assets/css/bundles/surface-34066ec652.v389.css",
+      "bytes": 159845,
+      "html_references": 4
+    },
+    {
+      "file": "assets/css/bundles/surface-6c1caeb8f2.v389.css",
+      "bytes": 158452,
+      "html_references": 2
+    },
+    {
+      "file": "assets/css/bundles/surface-35288737b8.v389.css",
+      "bytes": 153341,
+      "html_references": 62
+    },
+    {
+      "file": "assets/css/bundles/surface-8013eb3797.v389.css",
+      "bytes": 148263,
+      "html_references": 2
+    },
+    {
+      "file": "assets/css/bundles/surface-a00f07eced.v389.css",
+      "bytes": 147910,
+      "html_references": 2
+    },
+    {
+      "file": "assets/css/bundles/surface-288364aa6b.v389.css",
+      "bytes": 147417,
+      "html_references": 2
+    },
+    {
+      "file": "assets/css/bundles/surface-ab229382ff.v389.css",
+      "bytes": 146819,
+      "html_references": 6
+    },
+    {
+      "file": "assets/css/bundles/surface-404ca87aeb.v389.css",
+      "bytes": 146524,
+      "html_references": 4
+    },
+    {
+      "file": "assets/css/bundles/surface-4b7bb8db5a.v389.css",
+      "bytes": 144665,
+      "html_references": 2
+    },
+    {
+      "file": "assets/css/bundles/surface-5a4dd21501.v389.css",
+      "bytes": 144560,
+      "html_references": 2
+    },
+    {
+      "file": "assets/css/bundles/surface-78b745d9b2.v389.css",
+      "bytes": 142961,
+      "html_references": 2
+    },
+    {
+      "file": "assets/css/bundles/surface-7490480e49.v389.css",
+      "bytes": 142581,
+      "html_references": 6
+    },
+    {
+      "file": "assets/css/bundles/surface-553cb6897b.v389.css",
+      "bytes": 141668,
+      "html_references": 6
+    },
+    {
+      "file": "assets/css/bundles/surface-96fd191486.v389.css",
+      "bytes": 141248,
+      "html_references": 2
+    },
+    {
+      "file": "assets/css/bundles/surface-eacaa182e2.v389.css",
+      "bytes": 136813,
+      "html_references": 6
+    },
+    {
+      "file": "assets/css/bundles/v420-system-core.v420.css",
+      "bytes": 121346,
+      "html_references": 136
+    }
+  ]
+}

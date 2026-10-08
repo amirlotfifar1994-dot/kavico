@@ -1,0 +1,11 @@
+{
+  "version": "v427",
+  "target": "source",
+  "public_contracts": [
+    "lead-admin-export.v1.schema.json",
+    "lead-conversion.v1.schema.json",
+    "lead-lifecycle.v1.json"
+  ],
+  "source_contract_count": 8,
+  "errors": []
+}

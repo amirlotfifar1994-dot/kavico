@@ -1,0 +1,38 @@
+{
+  "version": "v425",
+  "scope": "public Project Brief abuse resilience + browser/cache security boundary",
+  "forms": 2,
+  "guard_fields_per_form": 6,
+  "guard_fields": ["form_guard_version", "form_rendered_at", "form_elapsed_ms", "form_nonce", "abuse_score", "abuse_signals"],
+  "client_behavior": {
+    "first_valid_submit": "allowed_then_locked",
+    "accidental_double_submit": "blocked",
+    "filled_honeypot": "blocked",
+    "bfcache_restore": "controls_restored",
+    "score_authority": "advisory_only"
+  },
+  "server_authority": {
+    "private_admin_version": "v414",
+    "duplicate_event_id": "409_rejected",
+    "duplicate_nonfollowup_lead_reference": "409_rejected",
+    "signed_ingest_replay_boundary": "retained"
+  },
+  "security_headers": {
+    "cross_origin_opener_policy": "same-origin",
+    "cross_origin_resource_policy": "same-origin",
+    "origin_agent_cluster": "?1",
+    "x_permitted_cross_domain_policies": "none",
+    "permissions_policy": "expanded deny-by-default"
+  },
+  "service_worker": {
+    "version": "kavico-v425",
+    "navigation_preload": true,
+    "query_cache_bypass": true,
+    "range_cache_bypass": true,
+    "authorization_cache_bypass": true,
+    "cache_status_required": 200,
+    "no_store_private_rejected": true,
+    "mime_family_validation": ["image", "font"],
+    "write_api_bypass": true
+  }
+}

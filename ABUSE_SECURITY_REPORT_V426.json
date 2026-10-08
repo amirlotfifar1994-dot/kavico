@@ -1,0 +1,13 @@
+{
+  "version": "v426",
+  "target": "source",
+  "forms_verified": 2,
+  "guard_field_sets_verified": 2,
+  "honeypots_verified": 2,
+  "runtime_guards_verified": 2,
+  "permissions_policy_length": 245,
+  "security_headers_verified": 6,
+  "admin_ingest_dedupe_contract": true,
+  "client_guard_scope": "advisory-abuse-signals + accidental-double-submit; server ingestion remains authoritative",
+  "errors": []
+}
