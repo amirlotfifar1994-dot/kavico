@@ -1,0 +1,45 @@
+name: Deploy preview to GitHub Pages
+
+# Publishes a static preview at https://<user>.github.io/<repo>/ on every push to main.
+# The real production site is https://kavico.ir (Netlify). Pages is static only, so the
+# contact form (a Netlify function) does not work on the preview.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Build the public site
+        run: node scripts/build-public-deploy.mjs
+
+      - name: Make it work under /<repo>/ (links, language switch, integrity hashes)
+        run: node scripts/prepare-pages-base.mjs dist-public "/${GITHUB_REPOSITORY#*/}"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist-public
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

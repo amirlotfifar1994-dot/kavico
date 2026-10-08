@@ -67,6 +67,6 @@ Never commit real values for these. Attach the `kavico.ir` domain in Netlify (ap
 | `kavico_v434_admin/` | Not tracked: local checkout of the private `kavico-admin` repo |
 | `*_V4xx.*` in the root | Generated version reports, provenance and checksums |
 
-A static preview of the built site is published on GitHub Pages with `npm run publish:preview` (needs `gh` signed in). It goes to the separate repo `<user>.github.io` because the site only works at a domain root (root links, `/en/` language switching). Pages serves static files only, so the contact form (a Netlify function) works on Netlify/`kavico.ir`, not on the preview. The preview has `robots.txt` set to Disallow so it does not compete with `kavico.ir` in search.
+A static preview is published automatically to **https://amirlotfifar1994-dot.github.io/kavico/** on every push to `main` (`.github/workflows/pages.yml`). The site is authored for a domain root (root-absolute links, `/en/` language switching), so the workflow runs `scripts/prepare-pages-base.mjs` after the normal build: it prefixes links with `/kavico`, patches the few JS spots that read paths, and refreshes the Subresource Integrity hashes of the files it changed. It fails the deploy if a patch stops applying. Pages is static only, so the contact form (a Netlify function) works on Netlify/`kavico.ir`, not on the preview; the preview's `robots.txt` is Disallow so it does not compete with `kavico.ir` in search.
 
 Public contact details on the site (phone, email, address) are intentionally public.
