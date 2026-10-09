@@ -42,7 +42,7 @@ for(const f of htmlFiles){
   const redirectStub=/name=["']robots["'][^>]*noindex/i.test(t) && /http-equiv=["']refresh["']/i.test(t);
   if(redirectStub) redirectStubCount++;
   if(!redirectStub){
-    if(!/v434-system-core\.v434\.css/.test(t)) errors.push(`Missing v434 merged system/core stylesheet: ${rel}`);
+    if(!/v435-system-core\.v435\.css/.test(t)) errors.push(`Missing v435 merged system/core stylesheet: ${rel}`);
     if(isSourceRoot && !/v435-public-runtime\.v435\.js/.test(t)) errors.push(`Missing modular v435 public runtime in source: ${rel}`);
     if(isDist && !/v434-page-runtime-[a-f0-9]{12}\.v434\.js/.test(t)) errors.push(`Missing v434 deploy page-runtime bundle: ${rel}`);
     if(!/<body\b[^>]*class=["'][^"']*\bv419-public\b/i.test(t)) errors.push(`Missing v419-public body class: ${rel}`);
@@ -193,7 +193,7 @@ if(isSourceRoot){
 
 }
 
-const v420Css=await readFile(path.join(target,'assets/css/bundles/v434-system-core.v434.css'),'utf8');
+const v420Css=await readFile(path.join(target,'assets/css/bundles/v435-system-core.v435.css'),'utf8');
 if(!/prefers-contrast:more/.test(v420Css)) errors.push('v420 merged stylesheet lost prefers-contrast hardening');
 if(!/prefers-reduced-motion:reduce/.test(v420Css)) errors.push('v420 merged stylesheet lost reduced-motion hardening');
 if(isSourceRoot){

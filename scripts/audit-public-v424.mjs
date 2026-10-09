@@ -193,7 +193,7 @@ if(isSourceRoot){
 
 }
 
-const v420Css=await readFile(path.join(target,'assets/css/bundles/v434-system-core.v434.css'),'utf8');
+const v420Css=await readFile(path.join(target,'assets/css/bundles/v435-system-core.v435.css'),'utf8');
 if(!/prefers-contrast:more/.test(v420Css)) errors.push('v420 merged stylesheet lost prefers-contrast hardening');
 if(!/prefers-reduced-motion:reduce/.test(v420Css)) errors.push('v420 merged stylesheet lost reduced-motion hardening');
 if(isSourceRoot){

@@ -457,3 +457,11 @@ body.nav-open #nav,body.nav-open .nav.open{z-index:2147483647!important;position
 @media(max-width:900px){
   html[dir] body.page-blog .blog-tools>*{height:auto!important;min-height:0!important;align-self:auto!important;flex:0 0 auto!important}
 }
+/* v461: .hero-actions is a flex COLUMN at max-width:720px, but its buttons carry
+   a row-oriented `flex:1 1 180px`. In a column that basis is a HEIGHT and the
+   grow factor stretches it, so on mobile each button became a ~180px-tall block
+   (/blog/ showed a huge empty orange "راهنمای انتخاب پوشش" card). Keep buttons
+   at their natural height in the stacked layout. */
+@media(max-width:720px){
+  body .hero-actions>.btn,body .hero-actions>a{flex:0 0 auto!important}
+}
